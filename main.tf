@@ -1,0 +1,153 @@
+provider "aws" {
+# region     = "${var.aws_region}"
+  region     = "us-east-2"
+  shared_credentials_file = "~/.aws/hpccreds"
+
+}
+
+resource "aws_instance" "cloudcompute" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+  count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "cloudcompute-${count.index}"
+  }
+}
+
+resource "aws_instance" "cloudNODUS" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+  count=4
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "cloudNODUS-${count.index}"
+  }
+}
+
+resource "aws_instance" "hpccloud-headnode" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-headnode"
+  }
+}
+
+
+resource "aws_instance" "hpccloud-localrepo" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-localrepo"
+  }
+}
+
+
+resource "aws_instance" "hpccloud-maverickldap" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-maverickldap"
+  }
+}
+
+resource "aws_instance" "hpccloud-MOABMSTR" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-moabmstr"
+  }
+}
+
+resource "aws_instance" "hpccloud-Insight" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-insight"
+  }
+}
+
+resource "aws_instance" "hpccloud-viewpoint" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-viewpoint"
+  }
+}
+
+resource "aws_instance" "hpccloud-xdmod" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-xdmod"
+  }
+}
+
+resource "aws_instance" "hpccloud-sparkmstr" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-sparkmstr"
+  }
+}
+
+resource "aws_instance" "hpccloud-hadoop" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-hadoop"
+  }
+}
+
+resource "aws_instance" "hpccloud-datastaging" {
+# ami = "ami-6871a115"  # us-east-1
+  ami = "ami-03291866"
+  instance_type = "t2.micro"
+# count=3
+  key_name="hpc-cloud" 
+
+  tags {
+    Name = "hpccloud-datastaging"
+  }
+}
+
