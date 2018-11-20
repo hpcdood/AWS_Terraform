@@ -11,3 +11,8 @@ variable "amis" {
     us-east-2 = "ami-03291866"
   }
 }
+
+variable "aws_region" {
+  description = "EC2 Region"
+  default = "us-east-2"
+}
